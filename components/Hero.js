@@ -15,9 +15,9 @@ const Hero = () => {
         Get Started
       </button>
 
-      <article className="mt-6">
+      <div className="mt-6">
         <Image src={heroImg} alt="image of female drinking coffee" />
-      </article>
+      </div>
     </section>
   );
 };

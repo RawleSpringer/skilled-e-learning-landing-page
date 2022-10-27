@@ -1,6 +1,40 @@
 import Head from 'next/head';
 import Header from '../components/Header';
 import Hero from '../components/Hero';
+import CourseCard from '../components/CourseCard';
+
+const courses = [
+  {
+    title: 'Animation',
+    description:
+      'Learn the latest animation techniques to create stunning motion design and captivate your audience.',
+    icon: 'animation',
+  },
+  {
+    title: 'Design',
+    description:
+      'Create beautiful, usable interfaces to help shape the future of how the web looks.',
+    icon: 'design',
+  },
+  {
+    title: 'Photography',
+    description:
+      'Explore critical fundamentals like lighting, composition, and focus to capture exceptional photos.',
+    icon: 'photography',
+  },
+  {
+    title: 'Crypto',
+    description:
+      'All you need to know to get started investing in crypto. Go from beginner to advanced with this 54 hour course.',
+    icon: 'crypto',
+  },
+  {
+    title: 'Business',
+    description:
+      'A step-by-step playbook to help you start, scale, and sustain your business without outside investment.',
+    icon: 'business',
+  },
+];
 
 export default function Home() {
   return (
@@ -12,6 +46,14 @@ export default function Home() {
       </Head>
       <Header />
       <Hero />
+      <section className="m-4">
+        <aside className="px-8 bg-orange-600 text-2xl text-white flex items-center justify-center  h-32 rounded-md">
+          Check out our most popular courses!
+        </aside>
+        {courses.map((course) => {
+          return <CourseCard course={course} key={course.title} />;
+        })}
+      </section>
     </div>
   );
 }
